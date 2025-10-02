@@ -1,0 +1,30 @@
+{
+    "nimi": "Digitekniikat",
+    "lukumaara": "5",
+    "osallistujat": [
+        {
+            "etunimi": "John",
+            "sukunimi": "Doe"
+        },
+        {
+            "etunimi": "Jane",
+            "sukunimi": "Doe"
+        },
+        {
+            "etunimi": "John",
+            "sukunimi": "Doe"
+        },
+        {
+            "etunimi": "Jane",
+            "sukunimi": "Doe"
+        },
+        {
+            "etunimi": "Jane",
+            "sukunimi": "Doe"
+        }
+    ],
+    "alku": "13.1.2025",
+    "loppu": "14.3.2025",
+    "kesto": "8 viikkoa",
+    "kuva": "https://s0ina.github.io/hh_image.jpeg"
+}
