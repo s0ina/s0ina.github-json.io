@@ -39,10 +39,40 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <h1>JSON</h1>
+        <div class="container" id="vastaus">
+            <h1>Sää Helsingissä</h1>
         </div>
     </main>
+    <script>
+        let data;
+        fetch(`https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric
+`)
+        // Muunnetaan vastaus JSON muotoon
+            .then(function (response) {
+                return response.json();
+            })
+            //Käsitellään muunnettu (eli JSON muotoinen) vastaus
+            .then(function (responseJson) {
+
+            // Kutsutaan funktiota ja välitetään sille json-vastaus
+            nayta(responseJson);
+            data = responseJson;
+            //console.log(data)
+            })
+            // Jos tuli jokin virhe
+            .catch(function (error) {
+                document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+            })
+
+        function nayta(data) {
+            let saa = "<p> Lämpötila: " + data.main.temp +"</p>"+"<br>"+
+            "<p> Tuuli: " + data.wind.speed + "</p>"+"<br>" +
+            "<p> Sää: " + data.weather.main + "</p>"+"<br>"+ "<p>" + data.weather.description + "</p>"+"<br>" + data.weather.icon + "</p>"+"<br>"
+
+
+            document.getElementById("vastaus").innerHTML += saa;
+        }
+    </script>
 
 </body>
 
